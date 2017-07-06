@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0f87efd8-fe13-4936-99a4-138ee672913c" activeEnvironment="Default environment" name="Project_AddressDoctorInteractive_Search" soapui-version="6.0.0" resourceRoot="" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting></con:settings><con:interface xsi:type="con:RestService" id="5650808b-d04f-4aad-a270-cbbf4ac993f6" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://qa.api.republicservices.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:endpoint>https://qa.api.republicservices.com/utilityServices/v1/address/validate</con:endpoint></con:endpoints><con:resource name="Search" path="/utilityServices/v1/address/search" id="bc0c6723-5739-48a4-acd6-5b0b9c97e577"><con:settings/><con:parameters><con:parameter><con:name>api_key</con:name><con:value>4bxe6hzdauv7dv79yttamz84</con:value><con:style>QUERY</con:style><con:default>4bxe6hzdauv7dv79yttamz84</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>Content-Type</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>Accept</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>sourceSystemTransactionID</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>sourceSystemTimeStamp</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>sourceApplicationID</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>exceptionNotificationEmailAddress</con:name><con:value/><con:style>HEADER</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Search" id="8fe534e7-9668-4042-b1d4-bb14ff6cbc1c" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:sear="https://qa.api.republicservices.com/utilityServices/v1/address/search">sear:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500 400 405</con:status><con:params/><con:element xmlns:sear="https://qa.api.republicservices.com/utilityServices/v1/address/search">sear:Fault</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/xml</con:mediaType><con:status>403</con:status><con:params/><con:element>h1</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="ba4b4738-8808-4d79-8c4d-92fd60d2947e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request>{
+  "AddressDoctorReq":{
+    "Addresses":{
+      "Address":[
+        {
+          "ID":"1234",
+          "AddressLine1":"Malibu Pier",
+          "AddressLine2":"Malibu Pub",
+          "AddressLine3":"Test Address",
+          "City":"Los Angeles",
+          "State":"CA",
+          "PostalCode":"90001",
+          "Country":"USA"
+        }
+      ]
+    }
+  }
+}</con:request><con:originalUri>https://qa.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-01-20T03:09:30-05:00"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters><con:parameterOrder><con:entry>api_key</con:entry><con:entry>Content-Type</con:entry><con:entry>Accept</con:entry><con:entry>sourceSystemTransactionID</con:entry><con:entry>sourceSystemTimeStamp</con:entry><con:entry>sourceApplicationID</con:entry><con:entry>exceptionNotificationEmailAddress</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="f2b32a28-bd58-475f-987e-72e423c48c68" name="TestSuite_AddressDoctor_Interactive"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="11cabd92-a182-4191-b626-d1a6ac36e1ce" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC_SearchAddress_GroovyAutomated" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy_Automation" id="0baf75ab-404d-44d3-9c5e-be5d2bcc37bb"><con:settings/><con:config><script>//Data Driven Testing by retrieving values from Excel sheet using Groovy Script
+
+import jxl.*
+
+def myCase = testRunner.testCase
+log.info myCase.getLabel();
+
+Workbook wb = Workbook.getWorkbook(new File("C:\\Users\\naraysa1\\Desktop\\Address_Doctor\\Groovy_Data_ValidAddresses_Search.xls"))
+Sheet sh = wb.getSheet(0)
+RowCount = sh.getRows();
+ColumnCount = sh.getColumns();
+for (i=1;i&lt;RowCount;i++)
+{
+    for (j=0;j&lt;ColumnCount;j++)
+      {
+
+def c = sh.getCell(j, i).getContents();
+      
+      	 log.info c
+
+      	       	 if (j==0) {
+      	
+      testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("ID", c)
+      	 }
+      
+      else if (j==1)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("AddressLine1", c)
+      }
+	  else if (j==2)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("AddressLine2", c)
+      }
+	  else if (j==3)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("AddressLine3", c)
+      }
+	  else if (j==4)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("City", c)
+      }
+	  else if (j==5)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("State", c)
+      }
+	  else if (j==6)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("PostalCode", c)
+      }
+	  else if (j==7)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("Country", c)
+      }
+ 
+
+ 		def TestStep =  testRunner.runTestStepByName("Search_Address")
+	//def response = context.expand( '${Search_ValidAddress_RunFromGroovy}' )
+	
+}
+}
+
+	 
+        	
+   </script></con:config></con:testStep><con:testStep type="properties" name="Properties_Address" id="5f4dd9bc-9404-42d5-a61a-bc00abf1bbdd"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>ID</con:name><con:value>123456</con:value></con:property><con:property><con:name>AddressLine1</con:name><con:value>3799 S Las Vegas Blvd</con:value></con:property><con:property><con:name>AddressLine2</con:name><con:value>MGM Grand Las Vegas</con:value></con:property><con:property><con:name>AddressLine3</con:name><con:value>Flamingo Road</con:value></con:property><con:property><con:name>City</con:name><con:value>Las Vegas</con:value></con:property><con:property><con:name>State</con:name><con:value>NV</con:value></con:property><con:property><con:name>PostalCode</con:name><con:value>89109</con:value></con:property><con:property><con:name>Country</con:name><con:value>USA</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Search_Address" id="605abb2f-5851-4487-b01b-1137d99243ce"><con:settings/><con:config service="https://qa.api.republicservices.com" methodName="Search" resourcePath="/utilityServices/v1/address/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Search_Address" id="28fe62c1-0b2e-4e22-bb55-b099fcf46e0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request>{"AddressDoctorReq": {"Addresses": {"Address": [{
+   "ID": "${Properties_Address#ID}",
+   "AddressLine1": "${Properties_Address#AddressLine1}",
+   "AddressLine2": "${Properties_Address#AddressLine2}",
+   "AddressLine3": "${Properties_Address#AddressLine3}",
+   "City": "${Properties_Address#City}",
+   "State": "${Properties_Address#State}",
+   "PostalCode": "${Properties_Address#PostalCode}",
+   "Country": "${Properties_Address#Country}"
+}]}}}</con:request><con:originalUri>https://qa.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:assertion type="XPath Match" id="27e2ad6c-326f-4849-add7-fc5128b5f52e" name="Assert_Latitude"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:Latitude[1]</path><content>36.13031</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="a5c08e76-6eb2-44ff-85b7-f1120e03149e" name="Assert_Longitude"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:Longitude[1]</path><content>-115.15782</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="24e8027b-2dd5-4955-ae73-b10a9162c777" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-01-20T03:09:30-05:00"/>
+  <con:entry key="api_key" value="4bxe6hzdauv7dv79yttamz84"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>0baf75ab-404d-44d3-9c5e-be5d2bcc37bb</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="a4954bd5-99ef-41b5-8b3d-756d2a9842bd" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_AddressDoctor_InteractiveSearch" searchProperties="true"><con:settings/><con:testStep type="datasource" name="ValidAddress_DataSource" id="73cc6181-3620-44b0-b12e-914992b7b425"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>C:/Users/naraysa1/Desktop/Address_Doctor/Data_ValidAddresses_Search.xlsx</file><worksheet>Data_Address</worksheet><cell>A2</cell><ignoreEmpty>false</ignoreEmpty></con:configuration></con:dataSource><con:property>ID</con:property><con:property>AddressLine1</con:property><con:property>AddressLine2</con:property><con:property>AddressLine3</con:property><con:property>City</con:property><con:property>State</con:property><con:property>PostalCode</con:property><con:property>Country</con:property><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="restrequest" name="Search_ValidAddress" id="1a7dca9f-6d3d-492c-903e-04bb2329d673"><con:settings/><con:config service="https://qa.api.republicservices.com" methodName="Search" resourcePath="/utilityServices/v1/address/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Search_ValidAddress" id="28fe62c1-0b2e-4e22-bb55-b099fcf46e0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request>{"AddressDoctorReq": {"Addresses": {"Address": [{
+   "ID": "${ValidAddress_DataSource#ID}",
+   "AddressLine1": "${ValidAddress_DataSource#AddressLine1}",
+   "AddressLine2": "${ValidAddress_DataSource#AddressLine2}",
+   "AddressLine3": "${ValidAddress_DataSource#AddressLine3}",
+   "City": "${ValidAddress_DataSource#City}",
+   "State": "${ValidAddress_DataSource#State}",
+   "PostalCode": "${ValidAddress_DataSource#PostalCode}",
+   "Country": "${ValidAddress_DataSource#Country}"
+}]}}}</con:request><con:originalUri>https://qa.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:assertion type="XPath Match" id="27e2ad6c-326f-4849-add7-fc5128b5f52e" name="Assert_Latitude" disabled="true"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:Latitude[1]</path><content>35.174921</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="a5c08e76-6eb2-44ff-85b7-f1120e03149e" name="Assert_Longitude" disabled="true"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:Longitude[1]</path><content>-80.801275</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="24e8027b-2dd5-4955-ae73-b10a9162c777" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-01-20T03:09:30-05:00"/>
+  <con:entry key="api_key" value="4bxe6hzdauv7dv79yttamz84"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="datasink" name="AddressResponse_DataSink" id="05af74bb-4f8b-482c-b414-fb3df9803d55"><con:settings/><con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSink type="Excel"><con:configuration><file/><outfile>C:/Users/naraysa1/Desktop/Address_Doctor/Response_ValidAddresses_Search.xlsx</outfile><worksheet>Response_Data</worksheet><cell>A2</cell></con:configuration></con:dataSink><con:properties><con:property><con:name>Address</con:name><con:value>${Search_ValidAddress#Response}</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="c3d84944-a6a5-45e3-b74f-5d9ae1491f1c"><con:settings/><con:config><dataSourceStep>ValidAddress_DataSource</dataSourceStep><targetStep>Search_ValidAddress</targetStep></con:config></con:testStep><con:testStep type="restrequest" name="Copy of Search_ValidAddress" id="bf120ad3-a344-462b-ad34-365184a5cb7b" disabled="true"><con:settings/><con:config service="https://qa.api.republicservices.com" methodName="Search" resourcePath="/utilityServices/v1/address/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of Search_ValidAddress" id="28fe62c1-0b2e-4e22-bb55-b099fcf46e0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request>{"AddressDoctorReq": {"Addresses": {"Address": [{
+   "ID": "12222",
+   "AddressLine1": "1625 Chestnut St ",
+   "AddressLine2": "Ste 228Philadelphia",
+   "AddressLine3": "Test Address",
+   "City": "Philadelphia",
+   "State": "Pennsylvania",
+   "PostalCode": "19099",
+   "Country": "USA"
+}]}}}</con:request><con:originalUri>https://qa.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:assertion type="XPath Match" id="27e2ad6c-326f-4849-add7-fc5128b5f52e" name="Assert_Latitude" disabled="true"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:Latitude[1]</path><content>35.174921</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="a5c08e76-6eb2-44ff-85b7-f1120e03149e" name="Assert_Longitude" disabled="true"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:Longitude[1]</path><content>-80.801275</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="24e8027b-2dd5-4955-ae73-b10a9162c777" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-01-20T03:09:30-05:00"/>
+  <con:entry key="api_key" value="4bxe6hzdauv7dv79yttamz84"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>ID</con:name><con:value>12345</con:value></con:property><con:property><con:name>AddressLine1</con:name><con:value>USA</con:value></con:property><con:property><con:name>AddressLine2</con:name><con:value>USA</con:value></con:property><con:property><con:name>AddressLine3</con:name><con:value>USA</con:value></con:property><con:property><con:name>City</con:name><con:value>USA</con:value></con:property><con:property><con:name>State</con:name><con:value>USA</con:value></con:property><con:property><con:name>PostalCode</con:name><con:value>USA</con:value></con:property><con:property><con:name>Country</con:name><con:value>USA</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>c3d84944-a6a5-45e3-b74f-5d9ae1491f1c</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>05af74bb-4f8b-482c-b414-fb3df9803d55</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>1a7dca9f-6d3d-492c-903e-04bb2329d673</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="5ee1faed-b20b-4dcf-9ba7-88d8b59f751d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_AddressDoctor_InteractiveSearch_Negative" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Search_InvalidAddress" id="909feec6-c2ad-4613-8ff0-ff91d8f910e0"><con:settings/><con:config service="https://qa.api.republicservices.com" methodName="Search" resourcePath="/utilityServices/v1/address/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Search_InvalidAddress" id="28fe62c1-0b2e-4e22-bb55-b099fcf46e0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request>{"AddressDoctorReq": {"Addresses": {"Address": [{
+   "ID": ":(",
+   "AddressLine1": "*&amp;&amp;",
+   "AddressLine2": "@!!",
+   "AddressLine3": "*&amp;^",
+   "City": "%^&amp;",
+   "State": "^&amp;*)(",
+   "PostalCode": "!@^%",
+   "Country": "*(^$"
+}]}}}</con:request><con:originalUri>https://qa.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:assertion type="XPath Match" name="Assert_Latitude" id="af760d8c-d676-498a-8738-35f0c9fe7d38"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:Latitude[1]/@null</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Assert_Longitude" id="c3628593-47ef-436b-8658-82c70573eb95"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:Longitude[1]/@null</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="51bc711d-ee97-4a39-aec2-b14ffda6409e"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-01-20T03:09:30-05:00"/>
+  <con:entry key="api_key" value="4bxe6hzdauv7dv79yttamz84"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Search_InvalidAddress2" id="1d4630f4-54a8-4d32-9e99-c9952fe77680"><con:settings/><con:config service="https://qa.api.republicservices.com" methodName="Search" resourcePath="/utilityServices/v1/address/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Search_InvalidAddress2" id="28fe62c1-0b2e-4e22-bb55-b099fcf46e0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request>{"AddressDoctorReq": {"Addresses": {"Address": [{
+   "ID": "$",
+   "AddressLine1": "$",
+   "AddressLine2": "$",
+   "AddressLine3": "$",
+   "City": "$",
+   "State": "$",
+   "PostalCode": "$",
+   "Country": "$"
+}]}}}</con:request><con:originalUri>https://qa.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:assertion type="XPath Match" name="Assert_Latitude" id="af760d8c-d676-498a-8738-35f0c9fe7d38"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:Latitude[1]/@null</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Assert_Longitude" id="c3628593-47ef-436b-8658-82c70573eb95"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:Longitude[1]/@null</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="51bc711d-ee97-4a39-aec2-b14ffda6409e"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-01-20T03:09:30-05:00"/>
+  <con:entry key="api_key" value="4bxe6hzdauv7dv79yttamz84"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>368a59af-47d1-4a89-a1ca-c5a483f83eb9</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="ac47bcb1-ec8a-4bce-8b5b-2156e0457feb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_AddressDoctor_InteractiveSearch_AddressSuggestions" searchProperties="true"><con:description>Gives the User Sugestions on valid addresses related to the given in the Request</con:description><con:settings/><con:testStep type="restrequest" name="Search_AddressSuggestion_CityName" id="c8c1a302-e0c9-48ec-b9b9-143d134392d3"><con:settings/><con:config service="https://qa.api.republicservices.com" methodName="Search" resourcePath="/utilityServices/v1/address/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Search_AddressSuggestion_CityName" id="28fe62c1-0b2e-4e22-bb55-b099fcf46e0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request>{"AddressDoctorReq": {"Addresses": {"Address": [{
+   "ID": "123456",
+   "AddressLine1": "282 S SHARON AMITY RD",
+   "AddressLine2": "",
+   "AddressLine3": "",
+   "City": "",
+   "State": "",
+   "PostalCode": "28211",
+   "Country": "USA"
+}]}}}</con:request><con:originalUri>https://qa.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:assertion type="XPath Match" id="115fa8eb-a31f-4299-b9d0-a1695c00435c" name="XPath Match"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:City[1]</path><content>CHARLOTTE</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-01-20T03:09:30-05:00"/>
+  <con:entry key="api_key" value="4bxe6hzdauv7dv79yttamz84"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Search_AddressSuggestion_AddressLine" id="7f768c0c-0e9d-4152-af38-640b0a4ac808"><con:settings/><con:config service="https://qa.api.republicservices.com" methodName="Search" resourcePath="/utilityServices/v1/address/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Search_AddressSuggestion_AddressLine" id="28fe62c1-0b2e-4e22-bb55-b099fcf46e0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request>{"AddressDoctorReq": {"Addresses": {"Address": [{
+   "ID": "123456",
+   "AddressLine1": "605 SELIG",
+   "City": "ATLANTA",
+   "State": "GA",
+   "PostalCode": "30336",
+   "Country": "USA"
+}]}}}</con:request><con:originalUri>https://qa.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:assertion type="XPath Match" id="a1dfb602-ace9-4bd9-9986-11607233b783" name="XPath Match"><con:configuration><path>declare namespace ns1='https://qa.api.republicservices.com/utilityServices/v1/address/search';
+//ns1:Response[1]/ns1:AddressDoctorRes[1]/ns1:AddressDoctorOutput[1]/ns1:ValidatedAddresses[1]/ns1:e[1]/ns1:AddressLine1[1]</path><content>605 SELIG DR SW</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-01-20T03:09:30-05:00"/>
+  <con:entry key="api_key" value="4bxe6hzdauv7dv79yttamz84"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>368a59af-47d1-4a89-a1ca-c5a483f83eb9</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="6685d932-1da2-4179-80b5-c8ff4e3b7b1d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC_AddressDoctor_InteractiveSearch_Without_MandatoryFields" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Search_Address_Without_MandatoryFields_RequestBody" id="9cf6c263-9b66-473a-aa6a-d47e58ee3ab1"><con:settings/><con:config service="https://qa.api.republicservices.com" methodName="Search" resourcePath="/utilityServices/v1/address/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Search_Address_Without_MandatoryFields_RequestBody" id="28fe62c1-0b2e-4e22-bb55-b099fcf46e0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request/><con:originalUri>https://qa.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="692b4831-5402-4388-b46b-8565afd90f8a" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>500</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="api_key" value="4bxe6hzdauv7dv79yttamz84"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-01-20T03:09:30-05:00"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="Content-Type" value="application/json"/>
+  <con:entry key="Accept" value="application/json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Search_Address_Without_MandatoryFields_RequestHeader" id="44b36d5d-aeef-42ed-98b7-d48521781284"><con:settings/><con:config service="https://qa.api.republicservices.com" methodName="Search" resourcePath="/utilityServices/v1/address/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Search_Address_Without_MandatoryFields_RequestHeader" id="28fe62c1-0b2e-4e22-bb55-b099fcf46e0e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request>{"AddressDoctorReq": {"Addresses": {"Address": [{
+   "ID": "123456",
+   "AddressLine1": "282 S SHARON AMITY RD CHARLOTTE NC",
+   "AddressLine2": "PANERA BREAD CAFE 1707",
+   "AddressLine3": "282 S SHARON AMITY RD",
+   "City": "CHARLOTTE",
+   "State": "NC",
+   "PostalCode": "28211",
+   "Country": "USA"
+}]}}}</con:request><con:originalUri>https://qa.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="3bf76185-37d4-4273-9a7a-1a329db20c94"><con:settings/><con:configuration><codes>400</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="api_key" value="4bxe6hzdauv7dv79yttamz84"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties><con:property><con:name>ID</con:name><con:value>123456</con:value></con:property><con:property><con:name>AddressLine1</con:name><con:value>237 St James Pl</con:value></con:property><con:property><con:name>AddressLine2</con:name><con:value>Zahav Restaurant</con:value></con:property><con:property><con:name>AddressLine3</con:name><con:value/></con:property><con:property><con:name>City</con:name><con:value>Philadelphia</con:value></con:property><con:property><con:name>State</con:name><con:value>PA</con:value></con:property><con:property><con:name>PostalCode</con:name><con:value>19106</con:value></con:property><con:property><con:name>Country</con:name><con:value>USA</con:value></con:property></con:properties><con:reportParameters/></con:testSuite><con:testSuite id="58c7735a-44e2-4280-b654-46c61c1f0ce9" name="AD_Validate_TestSuite"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:testCase id="7d584923-79aa-4157-aca8-afc7d0af1d67" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC_ValidateAddressNormally" searchProperties="true" timeout="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="Groovy Script" id="ad971119-5016-405e-9b49-0a93802ce20f"><con:settings/><con:config><script>//TODO: Experiment with manipulating date-driven steps.
+
+import jxl.*
+
+def myCase = testRunner.testCase
+log.info myCase.getLabel();
+
+Workbook wb = Workbook.getWorkbook(new File("C:\\Users\\naraysa1\\Desktop\\Address_Doctor\\DataSource_Address_Validate\\Data_AddressValidate.xls"))
+Sheet sh = wb.getSheet(0)
+RowCount = sh.getRows();
+ColumnCount = sh.getColumns();
+for (i=1;i&lt;RowCount;i++)
+{
+    for (j=0;j&lt;ColumnCount;j++)
+      {
+
+def c = sh.getCell(j, i).getContents();
+      
+      	 log.info c
+    	       	      	       
+ 	 if (j==0) {
+      	
+      testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("ID", c)
+      	 }
+      
+      else if (j==1)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("AddressLine1", c)
+      }
+	  else if (j==2)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("AddressLine2", c)
+      }
+	  else if (j==3)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("AddressLine3", c)
+      }
+	  else if (j==4)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("City", c)
+      }
+	  else if (j==5)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("State", c)
+      }
+	  else if (j==6)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("PostalCode", c)
+      }
+	  else if (j==7)
+      {
+      	testRunner.testCase.getTestStepByName("Properties_Address").setPropertyValue("Country", c)
+      }
+ 	
+ 	
+	
+ 		def TestStep =  testRunner.runTestStepByName("ValidateAddress")
+	//def response = context.expand( '${Search_ValidAddress_RunFromGroovy}' )
+	
+
+}
+}	 
+      	
+   
+
+</script></con:config></con:testStep><con:testStep type="properties" name="Properties_Address" id="2b00f381-0feb-48de-914e-010acb0a642c"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>ID</con:name><con:value>123456</con:value></con:property><con:property><con:name>AddressLine1</con:name><con:value>3799 S Las Vegas Blvd</con:value></con:property><con:property><con:name>AddressLine2</con:name><con:value>MGM Grand Las Vegas</con:value></con:property><con:property><con:name>AddressLine3</con:name><con:value>Flamingo Road</con:value></con:property><con:property><con:name>City</con:name><con:value>Las Vegas</con:value></con:property><con:property><con:name>State</con:name><con:value>NV</con:value></con:property><con:property><con:name>PostalCode</con:name><con:value>89109</con:value></con:property><con:property><con:name>Country</con:name><con:value>USA</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="ValidateAddress" id="53a54f0c-6ad7-434a-8187-bc6136c902f3"><con:settings/><con:config service="https://qa.api.republicservices.com" resourcePath="/utilityServices/v1/address/search" methodName="Search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ValidateAddress" id="b119d55d-d667-4a1f-a0f3-ae79fc2ae46c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sourceSystemTransactionID" value="200"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-04-11T14:48:07.331-07:00"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="mashery@Validate.com"/>
+  <con:entry key="sourceApplicationName" value="MasheryValidateReq"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>https://qa.api.republicservices.com</con:endpoint><con:request>{"AddressDoctorReq":{"Addresses":{"Address":{
+	"PostalCode":"${Properties_Address#PostalCode}",
+	"State":"${Properties_Address#state}",
+	"ID":"${Properties_Address#ID}",
+	"Country":"${Properties_Address#Country}",
+	"AddressLine1":"${Properties_Address#AddressLine1}",
+	"City":"${Properties_Address#City}",
+	"AddressLine2":"${Properties_Address#AddressLine2}",
+	"AddressLine3":"${Properties_Address#AddressLine3}"
+	}}}}</con:request><con:originalUri>https://dev.api.republicservices.com/utilityServices/v1/address/validate</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="45d9b984-b97f-48e3-a851-781ebfa511f5" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="dffc028e-4511-48b4-82a2-5e453708bbb8" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.response.timeTaken &lt; 1000</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="sourceSystemTimeStamp" value="2017-01-20T03:09:30-05:00"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="snarayanankrishnakumar@republicservices.com"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="sourceApplicationID" value="CRM"/>
+  <con:entry key="sourceSystemTransactionID" value="123"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters><con:parameterOrder><con:entry>api_key</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="582b0ce0-7abc-4b30-8b53-6e211c83b579"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="885dbaff-6d89-4842-a5f1-e5e696c9bf3e"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="datasource" name="DataSourceValidate" id="14743d10-09f6-4b7d-8695-ad4493ed50ef" disabled="true"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Grid"><con:configuration><check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">85260</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Scottsdale</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">AZ</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">14400 N 87th st</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">85224</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Chandler</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">AZ</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1817 N Dobson rd</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row></con:configuration></con:dataSource><con:property>zipCode</con:property><con:property>city</con:property><con:property>state</con:property><con:property>addressLine</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="e04bdacc-b1f6-45d7-83b3-965aa20878bd" disabled="true"><con:settings/><con:config><dataSourceStep/><targetStep/></con:config></con:testStep><con:testStep type="datasource" name="DataSourceValidateMulti" id="aa3df8aa-c376-4c36-b765-2eaba40b2e00" disabled="true"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Grid"><con:configuration><check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">85260</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Scottsdale</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">AZ</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">14400 N 87th st </con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">85224</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Chandler</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">AZ</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1817 N Dobson rd</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row></con:configuration></con:dataSource><con:property>zipCode</con:property><con:property>city</con:property><con:property>state</con:property><con:property>addressLine</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="restrequest" name="ValidateMultipleAddresses" id="9a20ba56-5078-4607-8c0e-b3360912a5bd" disabled="true"><con:settings/><con:config service="https://qa.api.republicservices.com" resourcePath="/utilityServices/v1/address/search" methodName="Search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ValidateMultipleAddresses" id="b119d55d-d667-4a1f-a0f3-ae79fc2ae46c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sourceSystemTransactionID" value="200"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-04-11T14:48:07.331-07:00"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="mashery@Validate.com"/>
+  <con:entry key="sourceApplicationName" value="MasheryValidateReq"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>https://dev.api.republicservices.com</con:endpoint><con:request>{
+  "AddressDoctorReq": {
+    "Addresses": {
+      "Address": {
+        "PostalCode": ${DataSourceValidateMulti#zipCode},
+        "State": "${DataSourceValidateMulti#state}",
+        "ID": 1,
+        "Country": "Maricopa",
+        "AddressLine1": "${DataSourceValidateMulti#addressLine}",
+        "City": "${DataSourceValidateMulti#city}",
+        "AddressLine2": "",
+        "AddressLine3": ""
+      }
+    },
+    "Address": {
+      "PostalCode": 85224,
+      "State": "AZ",
+      "ID": 1,
+      "Country": "Maricopa",
+      "AddressLine1": "1817 N Dobson Rd",
+      "City": "Chandler",
+      "AddressLine2": "",
+      "AddressLine3": ""
+    }
+  }
+}</con:request><con:originalUri>https://dev.api.republicservices.com/utilityServices/v1/address/validate</con:originalUri><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="api_key" value="rfbrnaf3wmrmuzpmg9hqndjg" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>api_key</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="582b0ce0-7abc-4b30-8b53-6e211c83b579"><con:authProfile>No Authorization</con:authProfile></con:entry><con:entry environmentId="885dbaff-6d89-4842-a5f1-e5e696c9bf3e"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop 2" id="c9da6310-6b9d-4eca-9ac2-fc0435ccd445" disabled="true"><con:settings/><con:config><dataSourceStep/><targetStep/></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>1991d8a4-12bf-410e-9c47-0f0cae7374be</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>071f8a8c-3a70-4b31-9462-fdfb7e611657</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0679784d-3356-462f-87bb-0c4abb65e118</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="885dbaff-6d89-4842-a5f1-e5e696c9bf3e"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:breakPoints><con:testStepId>ad971119-5016-405e-9b49-0a93802ce20f</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>2b00f381-0feb-48de-914e-010acb0a642c</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>53a54f0c-6ad7-434a-8187-bc6136c902f3</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="eb43196a-d66d-4feb-aa04-9b5c1a7ab2d0" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="SearchAddressVerifyID" searchProperties="true" timeout="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="datasource" name="DataSource" id="cdb24310-d6bf-4e7a-a750-2f7b2fb16376"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Grid"><con:configuration><check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">85260</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Scottsdale</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">AZ</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">14400 N 87th st </con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">85224</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Chandler</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">AZ</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1817 N Dobson rd</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row></con:configuration></con:dataSource><con:property>zipCode</con:property><con:property>city</con:property><con:property>state</con:property><con:property>addressLine</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="restrequest" name="SearchAddress" id="3981af48-a5dd-4224-af7a-66ac9c31962a"><con:settings/><con:config service="https://qa.api.republicservices.com" resourcePath="/utilityServices/v1/address/search" methodName="Search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="SearchAddress" id="973525de-f64b-49d1-a134-87d626b3cbde" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="sourceSystemTransactionID" value="300"/>
+  <con:entry key="sourceSystemTimeStamp" value="2017-04-11T13:34:07.331-07:00"/>
+  <con:entry key="exceptionNotificationEmailAddress" value="mashery@Search.com"/>
+  <con:entry key="sourceApplicationName" value="MasherySearchReq"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>https://dev.api.republicservices.com</con:endpoint><con:request>{"AddressDoctorReq":{"Addresses":{"Address":{"PostalCode":${DataSource#zipCode},"State":"${DataSource#state}","ID":1,"Country":"Maricopa","AddressLine1":"${DataSource#addressLine}","City":"${DataSource#city}","AddressLine2":"","AddressLine3":""}}}}</con:request><con:originalUri>https://dev.api.republicservices.com/utilityServices/v1/address/search</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="207aeafb-1a3a-491f-a680-4c8f90b74e15" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="api_key" value="rfbrnaf3wmrmuzpmg9hqndjg" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>api_key</con:entry></con:parameterOrder><con:environmentSpec><con:entry environmentId="582b0ce0-7abc-4b30-8b53-6e211c83b579"><con:authProfile>Inherit From Parent</con:authProfile></con:entry><con:entry environmentId="885dbaff-6d89-4842-a5f1-e5e696c9bf3e"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:restRequest></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="ec2c31e2-af0e-4b16-8e41-ebd6ab25b4c3"><con:settings/><con:config><dataSourceStep/><targetStep/></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>5ffbace1-cc33-49a7-89dc-0be1b64a383c</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>77876393-30e6-4fd4-b99c-3552a9b30ec7</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="885dbaff-6d89-4842-a5f1-e5e696c9bf3e"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="885dbaff-6d89-4842-a5f1-e5e696c9bf3e"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testSuite><con:requirements/><con:properties><con:property><con:name>ID</con:name><con:value/></con:property><con:property><con:name>AddressLine1</con:name><con:value/></con:property><con:property><con:name>AddressLine2</con:name><con:value/></con:property><con:property><con:name>AddressLine3</con:name><con:value/></con:property><con:property><con:name>City</con:name><con:value/></con:property><con:property><con:name>State	</con:name><con:value/></con:property><con:property><con:name>PostalCode</con:name><con:value/></con:property><con:property><con:name>Country</con:name><con:value/></con:property><con:property><con:name>ProjectProperty</con:name><con:value>1222</con:value></con:property></con:properties><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/><con:authRepository/></con:soapui-project>
